@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const TextKeyframes = keyframes`
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+`;
 
 export const Contents = styled.div`
     width: 100%;
@@ -26,12 +35,20 @@ export const Btns = styled.ul`
         font-weight: bold;
         font-size: 18px;
         color: white;
+        &:hover {
+            color: #52734D;
+            transition: 0.5s;
+        }
     }
     .register {
         margin-left: 2.5vh;
         font-weight: bold;
         font-size: 18px;
         color: white;
+        &:hover {
+            color: #52734D;
+            transition: 0.5s;
+        }
     }
 `;
 
@@ -57,9 +74,13 @@ export const Texts = styled.div`
         font-size: 8vh;
         font-weight: bold;
         color: #52734D;
+        animation: ${TextKeyframes};
+        animation-duration: 2s;
     }
     .SubTexts {
         margin-top: -2rem;
+        animation: ${TextKeyframes};
+        animation-duration: 2s;
     }
     .SubText {
         display: flex;
