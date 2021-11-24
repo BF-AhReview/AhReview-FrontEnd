@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 export const Contents = styled.div`
     width: 100%;
     height: 897px;
-    background: linear-gradient(to bottom,  white, #52734D);
+    background: linear-gradient(to bottom,  white, #FEFFDE);
 `;
 
 export const Main = styled.div`

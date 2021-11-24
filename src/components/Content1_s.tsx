@@ -12,7 +12,7 @@ const TextKeyframes = keyframes`
 export const Contents = styled.div`
     width: 100%;
     height: 897px;
-    background: linear-gradient(to bottom, #91C788, white);
+    background: linear-gradient(to bottom, #FEFFDE, white);
 `;
 
 export const Header = styled.div`
@@ -34,7 +34,7 @@ export const Btns = styled.ul`
     .login {
         font-weight: bold;
         font-size: 18px;
-        color: white;
+        color: #CBCBCB;
         &:hover {
             color: #52734D;
             transition: 0.5s;
@@ -44,7 +44,7 @@ export const Btns = styled.ul`
         margin-left: 2.5vh;
         font-weight: bold;
         font-size: 18px;
-        color: white;
+        color: #CBCBCB;
         &:hover {
             color: #52734D;
             transition: 0.5s;
