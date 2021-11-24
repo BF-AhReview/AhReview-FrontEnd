@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const Contents = styled.div`
     width: 100%;
@@ -52,4 +52,3 @@ export const Footer = styled.div`
         font-weight: bold;
     }
 `;
-

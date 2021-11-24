@@ -30,7 +30,8 @@ export const Btns = styled.ul`
     margin-left: 80rem;
     display: flex;
     list-style-type: none;
-
+    cursor: pointer;
+    
     .login {
         font-weight: bold;
         font-size: 18px;
