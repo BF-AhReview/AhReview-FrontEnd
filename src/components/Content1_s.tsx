@@ -11,7 +11,7 @@ const TextKeyframes = keyframes`
 
 export const Contents = styled.div`
     width: 100%;
-    height: 897px;
+    height: 920px;
     background: linear-gradient(to bottom, #FEFFDE, white);
 `;
 
