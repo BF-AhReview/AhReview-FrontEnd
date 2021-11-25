@@ -26,7 +26,7 @@ export const Texts = styled.div`
         animation-duration: 2s;
     }
     .SubTexts {
-        margin-top: -2rem;
+        margin-top: 2rem;
         animation-duration: 2s;
     }
     .SubText {
