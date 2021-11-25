@@ -70,14 +70,14 @@ const Content1: React.FC = () => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            'id': 'jeongtaehwan',
-            'password': '1234',
+            'id': 'wjdxoghks11222@naver.com',
+            'password': '0326!chkn',
         })
     })
         .then(response => response.json())
         .then(response => {
             if (response.token) {
-                localStorage.setItem('wtw-token', response.token);
+                localStorage.setItem('access_token', response.token);
             }
         })
     return (
