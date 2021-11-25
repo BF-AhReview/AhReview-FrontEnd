@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import * as s from './Content1_s';
-import * as i from '../assets/index';
+import * as s from './styled';
+import * as i from '../../assets'
 
 const Content1: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
