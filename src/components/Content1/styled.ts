@@ -24,6 +24,7 @@ export const Header = styled.div`
 export const Logo = styled.h1`
     color: #52734D;
     margin-left: 5rem;
+    font-size: 2rem;
 `;
 
 export const Btns = styled.ul`
@@ -54,23 +55,23 @@ export const Btns = styled.ul`
 `;
 
 export const Main = styled.div`
+    margin-bottom: 40vh;
     .FeedBack {
         margin-left: 100vh;
-        margin-top: -36vh;
+        margin-top: -45vh;
     }
 `;
 
 export const Wrapper = styled.div`
-    margin-bottom: -10vh; 
-
     .PlayBtn {
-        margin-left: 40vh;
+        margin-left: 30vh;
     }
 `;
 
 export const Texts = styled.div`
-    margin-left: 40vh;
-
+    margin-left: 30vh;
+    margin-top: 10vh;
+    
     .MainText {
         font-size: 8vh;
         font-weight: bold;
@@ -79,7 +80,7 @@ export const Texts = styled.div`
         animation-duration: 2s;
     }
     .SubTexts {
-        margin-top: -2rem;
+        margin-top: 2rem;
         animation: ${TextKeyframes};
         animation-duration: 2s;
     }
@@ -127,6 +128,6 @@ export const ModalContainer = styled.div`
         font-weight: bold;
     }
     .Naver {
-        margin-top: -5vh;
+        margin-bottom: 5vh;
     }
 `;
