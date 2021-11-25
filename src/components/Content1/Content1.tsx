@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as s from './styled';
 import * as i from '../../assets'
+import Header from '../Header/Header';
 
 declare global {
     interface Window {
@@ -82,13 +83,20 @@ const Content1: React.FC = () => {
         })
     return (
         <s.Contents>
-            <s.Header>
-                <s.Logo>Ah! Review</s.Logo>
-                <s.Btns id="naverIdLogin" >
-                    <li className="login" onClick={Naver}>로그인</li>
-                    <li className="register">등록하기</li>
-                </s.Btns>
-            </s.Header>
+            <Header />
+            {
+                showModal ?
+                    <s.Background
+                        className="paymodalWrapper"
+                        onClick={(e) => handlePayModalOff(e)}
+                    >
+                        <s.ModalContainer>
+                            <p className="HeaderText">로그인</p>
+                            <i.Naver className="Naver" />
+                        </s.ModalContainer>
+                    </s.Background>
+                    : null
+            }
             <s.Main>
                 <s.Wrapper>
                     <s.Texts>
