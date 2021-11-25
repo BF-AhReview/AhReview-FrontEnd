@@ -15,12 +15,6 @@ export const Contents = styled.div`
     background: linear-gradient(to bottom, #FEFFDE, white);
 `;
 
-export const Header = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
 export const Logo = styled.h1`
     color: #52734D;
     margin-left: 5rem;
