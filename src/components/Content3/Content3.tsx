@@ -1,6 +1,6 @@
 import React from 'react';
-import * as s from './Content3_s';
-import * as i from '../assets/index';
+import * as s from './styled';
+import * as i from '../../assets/index';
 
 const Content3: React.FC = () => {
     return (
