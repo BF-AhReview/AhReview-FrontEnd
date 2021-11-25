@@ -8,6 +8,18 @@ const Content1: React.FC = () => {
         setShowModal(true);
     }
 
+    const handlePayModalOff = (e: any) => {
+
+        const clicked = e.target.closest('.paymodal');
+
+        if (clicked) return;
+
+        else {
+            setShowModal(false);
+        }
+    };
+
+
     return (
         <s.Contents>
             <s.Header>
@@ -19,7 +31,10 @@ const Content1: React.FC = () => {
             </s.Header>
             {
                 showModal ?
-                    <s.Background>
+                    <s.Background
+                        className="paymodalWrapper"
+                        onClick={(e) => handlePayModalOff(e)}
+                    >
                         <s.ModalContainer>
                             <p className="HeaderText">로그인</p>
                             <i.Naver className="Naver" />
