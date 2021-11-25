@@ -1,10 +1,13 @@
 import React from 'react';
+import Content1 from './components/Content1';
+import Content3 from './components/Content3';
 
 function App() {
   return (
-    <div>
-      해커톤 불고기 볶음밥 팀 아리뷰(Ah! Review) 프론트엔드 부분
-    </div>
+    <>
+      <Content1 />
+      <Content3 />
+    </>
   );
 }
 
