@@ -63,21 +63,6 @@ const Content1: React.FC = () => {
                 });
         }
     }
-    // const [showModal, setShowModal] = useState(false);
-    // const onModal = () => {
-    //     setShowModal(true);
-    // }
-
-    // const handlePayModalOff = (e: any) => {
-
-    //     const clicked = e.target.closest('.paymodal');
-
-    //     if (clicked) return;
-
-    //     else {
-    //         setShowModal(false);
-    //     }
-    // };
     return (
         <s.Contents>
             <s.Header>
@@ -87,19 +72,6 @@ const Content1: React.FC = () => {
                     <li className="register">등록하기</li>
                 </s.Btns>
             </s.Header>
-            {/* {
-                showModal ?
-                    <s.Background
-                        className="paymodalWrapper"
-                        onClick={(e) => handlePayModalOff(e)}
-                    >
-                        <s.ModalContainer>
-                            <p className="HeaderText">로그인</p>
-                            <i.Naver className="Naver" />
-                        </s.ModalContainer>
-                    </s.Background>
-                    : null
-            } */}
             <s.Main>
                 <s.Wrapper>
                     <s.Texts>
