@@ -61,25 +61,24 @@ const Content1: React.FC = () => {
                     localStorage.setItem('wtw-token', res.token);
                     setData(res.user);
                 });
+            fetch('http://localhost:3000/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    'id': 'wjdxoghks11222@naver.com',
+                    'password': '0326!chkn',
+                })
+            })
+                .then(response => response.json())
+                .then(response => {
+                    if (response.token) {
+                        localStorage.setItem('access_token', response.token);
+                    }
+                })
         }
     }
-
-    fetch('http://localhost:3000/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            'id': 'wjdxoghks11222@naver.com',
-            'password': '0326!chkn',
-        })
-    })
-        .then(response => response.json())
-        .then(response => {
-            if (response.token) {
-                localStorage.setItem('access_token', response.token);
-            }
-        })
     return (
         <s.Contents>
             <s.Header>
