@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Background = styled.div`
   width: 100%;
   height: 100vh;
+  margin-top: -10vh;
   background: linear-gradient(#feffde, white);
   display: flex;
   justify-content: center;

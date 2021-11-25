@@ -3,84 +3,40 @@ import * as s from './styled';
 import * as i from '../../assets'
 import Header from '../Header/Header';
 
-declare global {
-    interface Window {
-        naver: any;
-    }
-}
+const { naver } = window as any;
 
-const { naver } = window;
-
-interface User {
-    nickname: string;
-    image: string;
-}
-
-interface Image {
-    url: string;
-}
-
-const Content1: React.FC = () => {
-    const [data, setData] = useState<User>({ nickname: '', image: '' });
-    useEffect(CDM, []);
-
-    function CDM() {
-        Naver();
-        GetProfile();
-    }
-
-    function Naver() {
+function Login(props: any) {
+    const initializeNaverLogin = () => {
         const naverLogin = new naver.LoginWithNaverId({
             clientId: 'S0OAHuxMBd6gwiSnnys3',
-            callbackUrl: 'http://localhost:3000',
-            callbackHandle: true,
-            loginButton: {
-                color: 'black',
-                type: 1,
-                height: 20,
-            }
+            callbackUrl: 'http://localhost:3000/',
+            isPopup: false, // popup 형식으로 띄울것인지 설정
+            loginButton: { color: 'white', type: 1, height: '47' }, //버튼의 스타일, 타입, 크기를 지정
         });
         naverLogin.init();
+    };
+
+    useEffect(() => {
+        initializeNaverLogin();
+    }, [])
+};
+
+const Content1: React.FC = () => {
+    const [showModal, setShowModal] = useState(false);
+    const onModal = () => {
+        setShowModal(true);
     }
 
-    function GetProfile() {
-        window.location.href.includes('access_token') && GetUser();
+    const handlePayModalOff = (e: any) => {
 
-        function GetUser() {
-            const location = window.location.href.split('=')[1];
-            const loca = location.split('&')[0];
-            const header = {
-                Authorization: loca,
-            };
+        const clicked = e.target.closest('.paymodal');
 
-            fetch('http://27.96.134.100:8080/swagger-ui/index.html', {
-                method: 'get',
-                headers: header,
-            })
-                .then((res) => res.json())
-                .then((res) => {
-                    localStorage.setItem('wtw-token', res.token);
-                    setData(res.user);
-                });
+        if (clicked) return;
+
+        else {
+            setShowModal(false);
         }
-    }
-
-    fetch('http://localhost:3000/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            'id': 'jeongtaehwan',
-            'password': '1234',
-        })
-    })
-        .then(response => response.json())
-        .then(response => {
-            if (response.token) {
-                localStorage.setItem('wtw-token', response.token);
-            }
-        })
+    };
     return (
         <s.Contents>
             <Header />
