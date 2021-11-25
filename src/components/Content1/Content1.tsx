@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as s from './styled';
 import * as i from '../../assets'
+import Header from '../Header/Header';
 
 const Content1: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
@@ -22,13 +23,7 @@ const Content1: React.FC = () => {
 
     return (
         <s.Contents>
-            <s.Header>
-                <s.Logo>Ah! Review</s.Logo>
-                <s.Btns>
-                    <li className="login" onClick={onModal}>로그인</li>
-                    <li className="register">등록하기</li>
-                </s.Btns>
-            </s.Header>
+            <Header />
             {
                 showModal ?
                     <s.Background
