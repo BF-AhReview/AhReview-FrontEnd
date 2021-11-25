@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Background = styled.div`
   width: 100%;
   height: 905px;
-  background: radial-gradient(#FEFFDE, white);
+  background: radial-gradient(#feffde, #feffde, white, white);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: -1;
-`
+`;
 
 export const Container = styled.div`
   display: flex;
