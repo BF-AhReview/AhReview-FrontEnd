@@ -1,6 +1,6 @@
 import * as S from "./styled";
 import { Phone } from "../../assets";
-import Pagination from "./Pagination/Pagination";
+import Pagination from "./Slider/Slider";
 
 const Content2: React.FC = () => {
   return (
