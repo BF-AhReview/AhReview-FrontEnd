@@ -1,58 +1,88 @@
 import React, { useState, useEffect } from 'react';
+import Header from '../Header/Header';
 import * as s from './styled';
 import * as i from '../../assets'
-import Header from '../Header/Header';
 
-const { naver } = window as any;
+declare global {
+    interface Window {
+        naver: any;
+    }
+}
 
-function Login(props: any) {
-    const initializeNaverLogin = () => {
-        const naverLogin = new naver.LoginWithNaverId({
-            clientId: 'S0OAHuxMBd6gwiSnnys3',
-            callbackUrl: 'http://localhost:3000/',
-            isPopup: false, // popup 형식으로 띄울것인지 설정
-            loginButton: { color: 'white', type: 1, height: '47' }, //버튼의 스타일, 타입, 크기를 지정
-        });
-        naverLogin.init();
-    };
+const { naver } = window;
 
-    useEffect(() => {
-        initializeNaverLogin();
-    }, [])
-};
+interface User {
+    nickname: string;
+    image: string;
+}
+
+interface Image {
+    url: string;
+}
 
 const Content1: React.FC = () => {
-    const [showModal, setShowModal] = useState(false);
-    const onModal = () => {
-        setShowModal(true);
+    const [data, setData] = useState<User>({ nickname: '', image: '' });
+    useEffect(CDM, []);
+
+    function CDM() {
+        Naver();
+        GetProfile();
     }
 
-    const handlePayModalOff = (e: any) => {
+    function Naver() {
+        const naverLogin = new naver.LoginWithNaverId({
+            clientId: 'S0OAHuxMBd6gwiSnnys3',
+            callbackUrl: 'http://localhost:3000',
+            callbackHandle: true,
+            loginButton: {
+                color: 'black',
+                type: 1,
+                height: 20,
+            }
+        });
+        naverLogin.init();
+    }
 
-        const clicked = e.target.closest('.paymodal');
+    function GetProfile() {
+        window.location.href.includes('access_token') && GetUser();
 
-        if (clicked) return;
+        function GetUser() {
+            const location = window.location.href.split('=')[1];
+            const loca = location.split('&')[0];
+            const header = {
+                Authorization: loca,
+            };
 
-        else {
-            setShowModal(false);
+            fetch('http://27.96.134.100:8080/swagger-ui/index.html', {
+                method: 'get',
+                headers: header,
+            })
+                .then((res) => res.json())
+                .then((res) => {
+                    localStorage.setItem('wtw-token', res.token);
+                    setData(res.user);
+                });
+            fetch('http://localhost:3000/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    'id': 'wjdxoghks11222@naver.com',
+                    'password': '0326!chkn',
+                })
+            })
+                .then(response => response.json())
+                .then(response => {
+                    if (response.token) {
+                        localStorage.setItem('access_token', response.token);
+                    }
+                })
         }
-    };
+    }
     return (
         <s.Contents>
-            <Header />
-            {
-                showModal ?
-                    <s.Background
-                        className="paymodalWrapper"
-                        onClick={(e) => handlePayModalOff(e)}
-                    >
-                        <s.ModalContainer>
-                            <p className="HeaderText">로그인</p>
-                            <i.Naver className="Naver" />
-                        </s.ModalContainer>
-                    </s.Background>
-                    : null
-            }
+            <Header/>
             <s.Main>
                 <s.Wrapper>
                     <s.Texts>
