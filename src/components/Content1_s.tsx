@@ -114,7 +114,7 @@ export const ModalContainer = styled.div`
     top: 50%;
     transform: translate(-50%, -50%);
     max-height: 80%;
-    width: 50vh;
+    width: 70vh;
     height: 40%;
     padding: 16px;
     background: #FFFFFF;
