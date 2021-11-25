@@ -63,6 +63,23 @@ const Content1: React.FC = () => {
                 });
         }
     }
+
+    fetch('http://localhost:3000/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            'id': 'jeongtaehwan',
+            'password': '1234',
+        })
+    })
+        .then(response => response.json())
+        .then(response => {
+            if (response.token) {
+                localStorage.setItem('wtw-token', response.token);
+            }
+        })
     return (
         <s.Contents>
             <s.Header>
