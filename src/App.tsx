@@ -1,10 +1,11 @@
-import React from 'react';
-import Content1 from './components/Content1';
+import RootRouter from './router';
+import { GlobalStyle } from "./style/globalStyle";
 
 function App() {
   return (
     <>
-      <Content1 />
+      <GlobalStyle />
+      <RootRouter />
     </>
   );
 }
