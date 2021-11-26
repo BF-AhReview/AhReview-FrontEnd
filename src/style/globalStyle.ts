@@ -105,6 +105,7 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
   }
   body {
+    box-sizing: border-box;
     line-height: auto;
     margin: 0;
     background-color: white;

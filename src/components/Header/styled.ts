@@ -4,12 +4,13 @@ export const Header = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 43px;
 `;
 
 export const Logo = styled.h1`
     color: #52734D;
     margin-left: 5rem;
-    font-size: 2rem;
+    font-size: 24px;
 `;
 
 export const Btns = styled.ul`
@@ -18,6 +19,7 @@ export const Btns = styled.ul`
     list-style-type: none;
     cursor: pointer;
 
+    text-decoration: none;
     .login {
         font-weight: bold;
         font-size: 18px;
@@ -27,7 +29,7 @@ export const Btns = styled.ul`
             transition: 0.5s;
         }
     }
-    .register {
+    .post {
         margin-left: 2.5vh;
         font-weight: bold;
         font-size: 18px;
