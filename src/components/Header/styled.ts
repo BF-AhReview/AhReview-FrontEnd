@@ -19,6 +19,7 @@ export const Btns = styled.ul`
     list-style-type: none;
     cursor: pointer;
 
+    text-decoration: none;
     .login {
         font-weight: bold;
         font-size: 18px;
@@ -28,7 +29,7 @@ export const Btns = styled.ul`
             transition: 0.5s;
         }
     }
-    .register {
+    .post {
         margin-left: 2.5vh;
         font-weight: bold;
         font-size: 18px;
